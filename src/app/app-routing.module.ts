@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: 'expense-track-clac',
+    loadChildren: () => import('./expense-track-clac/expense-track-clac.module').then( m => m.ExpenseTrackClacPageModule)
   }
 ];
 
