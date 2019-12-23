@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'forget-password',
     loadChildren: () => import('./forget-password/forget-password.module').then( m => m.ForgetPasswordPageModule)
+  },
+  {
+    path: 'cal-list',
+    loadChildren: () => import('./cal-list/cal-list.module').then( m => m.CalListPageModule)
   }
 ];
 
