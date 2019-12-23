@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from '../shared/services/auth.service';
 import { ToastController, ModalController } from '@ionic/angular';
 import { SignupPage } from '../signup/signup.page';
+import { ForgetPasswordPage } from '../forget-password/forget-password.page';
 
 @Component({
   selector: 'app-login',
@@ -53,6 +54,14 @@ export class LoginPage implements OnInit {
     this.dismiss();
     const modal = await this.modalController.create({
       component: SignupPage
+    });
+    return await modal.present();
+  }
+
+  async goToResetPassword() {
+    this.dismiss();
+    const modal = await this.modalController.create({
+      component: ForgetPasswordPage
     });
     return await modal.present();
   }

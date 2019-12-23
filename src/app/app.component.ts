@@ -71,7 +71,7 @@ export class AppComponent {
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
-      
+      AuthService.intialize();
 
       firebase.auth().onAuthStateChanged((firebaseUser: firebase.User) => {
         if (firebaseUser) {

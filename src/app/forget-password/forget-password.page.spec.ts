@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ExpenseTrackClacPage } from './expense-track-clac.page';
+import { ForgetPasswordPage } from './forget-password.page';
 
-describe('ExpenseTrackClacPage', () => {
-  let component: ExpenseTrackClacPage;
-  let fixture: ComponentFixture<ExpenseTrackClacPage>;
+describe('ForgetPasswordPage', () => {
+  let component: ForgetPasswordPage;
+  let fixture: ComponentFixture<ForgetPasswordPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExpenseTrackClacPage ],
+      declarations: [ ForgetPasswordPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ExpenseTrackClacPage);
+    fixture = TestBed.createComponent(ForgetPasswordPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

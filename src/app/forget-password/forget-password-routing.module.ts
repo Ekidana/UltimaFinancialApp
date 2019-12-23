@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ExpenseTrackClacPage } from './expense-track-clac.page';
+import { ForgetPasswordPage } from './forget-password.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ExpenseTrackClacPage
+    component: ForgetPasswordPage
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ExpenseTrackClacPageRoutingModule {}
+export class ForgetPasswordPageRoutingModule {}
