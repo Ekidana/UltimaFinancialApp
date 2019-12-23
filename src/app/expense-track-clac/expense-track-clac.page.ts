@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpenseTrackClacPage implements OnInit {
 
+  items=["CyberTruck","MacPro","Falcon9","E63 Wagon","A7", "PoleStar1", "PoleStar2", "Jeff Bezos", "Bill Gates","Elon Musk", "Panda Express", "Yum Foods", "Warren Buffet"];
+ 
   constructor() { }
 
   ngOnInit() {
