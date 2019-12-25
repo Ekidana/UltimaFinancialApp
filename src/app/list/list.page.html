@@ -12,8 +12,9 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
       {{item.title}}
+      <ion-icon [name]="item.icon" slot="start"></ion-icon>
+      
       <div class="item-note" slot="end">
         {{item.note}}
       </div>
