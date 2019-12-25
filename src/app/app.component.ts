@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import 'firebase/auth'
 import { LoginPage } from './login/login.page';
 import { AuthService } from './shared/services/auth.service';
+import { HttpClient,HttpParams,HttpHeaders } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-root',

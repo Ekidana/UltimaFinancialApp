@@ -9,7 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginPageModule } from './login/login.module';
-
+import { HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -18,8 +18,10 @@ import { LoginPageModule } from './login/login.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     LoginPageModule,
+    HttpClientModule
   ],
   providers: [
+    
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
