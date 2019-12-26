@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ExpenseTrackClac</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list> 
+    <ion-item-sliding *ngFor="let list of items" (ionSwipe) = "delete()">
+      <ion-item>
+        {{list.name}}
+      </ion-item>
+      <ion-item-options>
+        <ion-button full expandable (click)="delete(item)">
+          Delete
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+
+

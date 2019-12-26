@@ -6,8 +6,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import 'firebase/auth'
 import { LoginPage } from './login/login.page';
 import { AuthService } from './shared/services/auth.service';
-import { HttpClient,HttpParams,HttpHeaders } from '@angular/common/http';
-
 
 @Component({
   selector: 'app-root',
@@ -43,6 +41,11 @@ export class AppComponent {
       title: 'Profile',
       url: '/profile',
       icon: 'happy'
+    },
+    {
+      title: 'Expense',
+      url: '/expense-track-clac',
+      icon: 'happy'
     }
   ];
 
@@ -61,7 +64,7 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-      var firebaseConfig = {
+      const firebaseConfig = {
         apiKey: "AIzaSyAwUTsD1ACyM7pyxyi1pd7MRgYBuY6kI6Q",
         authDomain: "ultima-financial-servi.firebaseapp.com",
         databaseURL: "https://ultima-financial-servi.firebaseio.com",
@@ -73,7 +76,7 @@ export class AppComponent {
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
-      AuthService.intialize();
+      
 
       firebase.auth().onAuthStateChanged((firebaseUser: firebase.User) => {
         if (firebaseUser) {
