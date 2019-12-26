@@ -8,7 +8,6 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 import { SignupPageModule } from '../signup/signup.module';
-import { ForgetPasswordPageModule } from '../forget-password/forget-password.module';
 
 @NgModule({
   imports: [
@@ -18,7 +17,6 @@ import { ForgetPasswordPageModule } from '../forget-password/forget-password.mod
     LoginPageRoutingModule,
     ReactiveFormsModule,
     SignupPageModule,
-    ForgetPasswordPageModule,
   ],
   declarations: [LoginPage]
 })

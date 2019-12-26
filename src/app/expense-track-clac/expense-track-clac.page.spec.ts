@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { HomePage } from './expensetracker.page';
+import { ExpenseTrackClacPage } from './expense-track-clac.page';
 
-describe('HomePage', () => {
-  let component: HomePage;
-  let fixture: ComponentFixture<HomePage>;
+describe('ExpenseTrackClacPage', () => {
+  let component: ExpenseTrackClacPage;
+  let fixture: ComponentFixture<ExpenseTrackClacPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HomePage],
+      declarations: [ ExpenseTrackClacPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HomePage);
+    fixture = TestBed.createComponent(ExpenseTrackClacPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

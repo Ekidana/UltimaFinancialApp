@@ -7,28 +7,23 @@ import { User } from '../models/users';
   providedIn: 'root'
 })
 export class AuthService {
-  static user: User = new User();
-  constructor() { }
-
-  static intialize() {
+  user: User = new User();
+  constructor() {
     firebase.auth().onAuthStateChanged((firebaseUser: firebase.User) => {
-        if (firebaseUser) {
-            this.user.email = firebaseUser.email;
-            console.log('User ' + this.user.email);
-        } else {
-            console.log('User logged out');
-            this.user.email = undefined;
-        }
-    });
-  }
-
-  getCurrentUser() {
-    return AuthService.user;
-  }
-
+      if (firebaseUser) {
+          this.user.email = firebaseUser.email;
+      } else {
+          this.user.email = '';
+      }
+  });
+}
 
   login(email: string, password: string) {
     return firebase.auth().signInWithEmailAndPassword(email, password);
+  }
+
+  getCurrentUser() {
+    return this.user;
   }
 
   logout() {
