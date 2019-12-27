@@ -6,6 +6,7 @@ import { Items } from '../shared/models/item';
   templateUrl: './expense-track-clac.page.html',
   styleUrls: ['./expense-track-clac.page.scss'],
 })
+
 export class ExpenseTrackClacPage implements OnInit {
   items: Items[];
   
@@ -13,11 +14,11 @@ export class ExpenseTrackClacPage implements OnInit {
 
   ngOnInit() {
     this.items = [new Items("Cybertruck"),
-    new Items("MacPro")]
+    new Items("MacPro"),new Items("Apple")]
   }
 
   delete(i){
    this.items.splice(i,1)
- }
+  }
 
 }

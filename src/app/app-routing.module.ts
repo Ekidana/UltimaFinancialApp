@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'expense-track-clac',
     loadChildren: () => import('./expense-track-clac/expense-track-clac.module').then( m => m.ExpenseTrackClacPageModule)
+  },
+  {
+    path: 'expense-calculator',
+    loadChildren: () => import('./expense-calculator/expense-calculator.module').then( m => m.ExpenseCalculatorPageModule)
   }
 ];
 
