@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sell Investment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>Investment Name: {{investmentname}}</ion-item>
+  <ion-item>Quantity Owned: {{quantity}}</ion-item>
+  <ion-item>Buying Price: {{buyingofferprice | currency}}</ion-item>
+  <ion-item>Current Selling Price: {{sellingprice | currency}}</ion-item>
+  <ion-item>Minimum return if sold: {{amount | currency}}</ion-item>
+  <ion-button (click) = "sell()">Send Sell Request</ion-button>
+</ion-content>

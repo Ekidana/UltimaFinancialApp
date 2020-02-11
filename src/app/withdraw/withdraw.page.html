@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Transfer
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none" text-align="center">
+    <ion-title slot="start" text-align="center" ><h1>In or out Ultima</h1> </ion-title>
+  </ion-item>
+  <ion-item href="/deposit">
+  <ion-icon name="cash" slot="start"></ion-icon>
+    <ion-label>Put Money In </ion-label>
+    <ion-icon name="arrow-dropright" slot="end"></ion-icon>
+</ion-item>
+<ion-item href="/withdrawal">
+
+  <ion-icon ios="ios-cash" md="md-cash"  slot="start"></ion-icon>
+    <ion-label>Take Money Out</ion-label>
+    <ion-icon name="arrow-dropright" slot="end"></ion-icon>
+</ion-item>
+<ion-item href="/transactionhistory">
+  <ion-icon ion="ios-list-box"  md="md-list-box"slot="start"></ion-icon>
+    <ion-label>Transaction History</ion-label>
+    <ion-icon name="arrow-dropright" slot="end"></ion-icon>
+</ion-item>
+</ion-content>

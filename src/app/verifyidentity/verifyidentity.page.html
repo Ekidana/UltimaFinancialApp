@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Retry Identity Verification</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click) = "takenric()">Take NRIC pic</ion-button>
+  <img src = "{{nric}}">
+  <ion-button (click) = "takeselfie()">Take Selfie pic</ion-button>
+  <img src = "{{selfie}}">
+  <ion-button (click) = "submitpicture()">Submit</ion-button>
+</ion-content>

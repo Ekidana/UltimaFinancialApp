@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Saving
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <img src="/assets/image/saving.PNG" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;"/>
+  <ion-item>
+    <ion-title style="text-align: center;"><b>Do you want to save more <br>
+      for retirement?</b></ion-title>
+  </ion-item>
+  <ion-card>
+
+  <h5>Saving </h5>
+  Download our giro form so that you can save more money. 
+  We will collect $30 from you everymonth to save for you.
+  <p>Just download our giro form, 
+  and mail it to us.</p>
+  <!---
+  <ion-label stacked> Amount  </ion-label>
+
+  <ion-input type="number" [(ngModel)]="letterObj.amount"></ion-input>
+
+    -->
+ 
+
+<ion-button style="width: 100%;text-align: center; " full (click)="createPdf()" color="secondary">Download PDF</ion-button>
+</ion-card> 
+</ion-content>

@@ -75,3 +75,14 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 }
+
+ion-menu {
+  --ion-background-color:#ffffff;
+  --ion-text-color:  #a0522d;
+  ion-toolbar {
+    --background: #0bb8cc;
+  }
+
+  ion-list {/* optional, but it needs when you use gradient as a background color.*/
+    background: transparent;
+  }}

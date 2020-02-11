@@ -10,6 +10,16 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginPageModule } from './login/login.module';
 
+import { File } from '@ionic-native/file/ngx'
+import { FileOpener } from '@ionic-native/file-Opener/ngx'
+
+import 'chartjs-plugin-zoom';
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -17,12 +27,19 @@ import { LoginPageModule } from './login/login.module';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    HttpClientModule,
     LoginPageModule,
+    IonicStorageModule.forRoot()
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    Camera,
+    EmailComposer,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    File,
+    FileOpener
   ],
   bootstrap: [AppComponent]
 })

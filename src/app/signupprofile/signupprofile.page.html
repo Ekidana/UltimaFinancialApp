@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end" *ngIf = "close">
+      <ion-button (click)="dismiss()">
+        Close
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Create Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="signupprofileForm" (ngSubmit)="signupprofile()" *ngIf = "!hide">
+    <ion-item>
+      <ion-label>First Name: </ion-label>
+      <ion-input type="name" formControlName="fname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last Name: </ion-label>
+      <ion-input type="name" formControlName="lname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>User ID: </ion-label>
+      <ion-input type="name" formControlName="userid"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>NRIC: </ion-label>
+      <ion-input type="nric" formControlName="nric"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Gender: </ion-label>
+      <ion-select formControlName="gender">
+        <ion-select-option *ngFor="let option of genderidentifier" [value]="option">
+          {{option}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date of Birth: </ion-label>
+      <ion-input type="date" formControlName=date></ion-input>
+    </ion-item>
+    <ion-button expand="block" color="tertiary" type="submit">Create Profile</ion-button>
+  </form>
+  <ion-label>
+    Note: You will not be able to change your User ID in the future after setting it now.
+  </ion-label>
+  <ion-label *ngIf = "signupprofileForm.controls.fname.errors && submitted" color="danger">
+    First Name is required.
+  </ion-label>
+  <br>
+  <ion-label *ngIf = "signupprofileForm.controls.lname.errors && submitted" color="danger">
+    Last Name is required.
+  </ion-label>
+  <br>
+  <ion-label *ngIf = "signupprofileForm.controls.nric.errors && submitted" color="danger">
+    NRIC is required.
+  </ion-label>
+  <br>
+  <ion-label *ngIf = "signupprofileForm.controls.date.errors && submitted" color="danger">
+    Date of Birth is required.
+  </ion-label>
+  <br>
+  <ion-label *ngIf = "signupprofileForm.controls.userid.errors && submitted" color="danger">
+    User ID is required.
+  </ion-label>
+  <ion-button *ngIf = "hide" (click) = "takenric()">Take NRIC pic</ion-button>
+  <img *ngIf = "hide" src = "{{nric}}">
+  <ion-button *ngIf = "hide" (click) = "takeselfie()">Take Selfie pic</ion-button>
+  <img *ngIf = "hide" src = "{{selfie}}">
+  <ion-button *ngIf = "hide" (click) = "submitpicture()">Submit</ion-button>
+</ion-content>

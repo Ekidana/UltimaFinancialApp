@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update Customer</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="welcome-card" color ="primary">
+    <ion-card-header>
+      <ion-card-subtitle>Search For Customer</ion-card-subtitle>
+      <ion-card-title>Retrieve & Update </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        <p>Update customer information with your admin rights</p>
+    </ion-card-content>
+  </ion-card>
+
+    <ion-searchbar (ionChange)=search($event) color='medium'></ion-searchbar>
+
+    <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+<h2>Customer Information</h2>
+    <ion-list>
+      <ion-item *ngFor="let item of information" [routerLink]="['/edit-cus', item.id]">
+        <ion-label>
+          <p>User Id: {{item.userid}}</p>
+          <p>First Name: {{item.fname}}</p>
+          <p>Last Name: {{item.lname}}</p>
+          <p>Nric: {{item.nric}}</p>
+          <p>Email: {{item.email}}</p>
+          <p>Role: {{item.role}} </p>
+          <p>Gender: {{item.gender}}</p>
+          </ion-label>
+          </ion-item>
+
+
+    </ion-list>
+
+
+<!-- 
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" *ngFor="let item of information" >
+          <div class="beverage-card">
+            <div>{{item.fname}}</div>
+            <div>{{item.lname}}</div>
+            <div>{{item.nric}}</div>
+            <div>{{item.email}}</div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid> -->
+
+    <!-- <form>
+      <ion-item>
+         <ion-label>NRIC: {{information.nric}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>First Name: {{fname}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Last Name: {{lname}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Gender: {{gender}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Role: {{role}}</ion-label>
+      </ion-item>
+    </form> -->
+</ion-content>

@@ -10,39 +10,81 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class="welcome-card">
-    <img src="/assets/shapes.svg" alt=""/>
-    <ion-card-header>
-      <ion-card-subtitle>Get Started</ion-card-subtitle>
-      <ion-card-title>Welcome to Ionic</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>
-        Now that your app has been created, you'll want to start building out features
-        and components. Check out some of the resources below for next steps.
-      </p>
-    </ion-card-content>
-  </ion-card>
+  <div class="login-logo">
+    <img src="assets/img/553897_12053758_2304719_df129cef_image (1).jpg" alt="Ionic logo">  </div>
 
-  <ion-list lines="none">
-    <ion-list-header>
-      <ion-label>Resources</ion-label>
-    </ion-list-header>
-    <ion-item href="https://ionicframework.com/docs/">
-      <ion-icon slot="start" color="medium" name="book"></ion-icon>
-      <ion-label>Ionic Documentation</ion-label>
+  <ion-item (click)="openModal()" lines="none" >
+    <ion-title slot="start"><h2>Imagine what's possible when <br>you
+       treat your money right</h2></ion-title>
+  </ion-item>
+  <ion-card class="card" color="secondary"><font style color='black'>
+    <h4>Invest for what you want, not what someone else tells you to want   </h4>
+    <p class="p">We have financial planning tools 
+      and a wide range of investment portfolios 
+      from which you can choose so that you can
+       direct your money towards the future you want.</p>
+      
+       <h4>Invest for your retirement</h4>
+       <p class="p">When do you want to retire? 
+         What do you want your retirement to look like? 
+         How much have you already started saving? 
+         How much can you put aside each month? 
+         We’ll get just personal enough to build 
+         you a personalised retirement plan that 
+         helps you retire how you want. </p>
+         <h4>Invest towards your life goals</h4>
+         <p class="p">Want to buy a house? 
+           Send your kids to a great university? 
+           Tell us what you want to achieve,
+            and we’ll build you a savings and 
+            investment plan to help you reach each 
+            of your financial goals.</p>
+  </font>
+  </ion-card>
+  <ion-item>
+    <ion-thumbnail slot="start">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI6Prs9n0gVOtSoh6Wf_D1TSAWWQSxpxGiSG2MEIVgG0PGW4KE&s">
+    </ion-thumbnail>
+    <ion-label>
+      <h3>We make everything easier for you!</h3>
+      <p>The end-to-end investment experience ,<br>
+      online, is simple and easy to understand<br>
+        </p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-title slot="start"><h2>What are unit trusts?</h2></ion-title>
+  </ion-item>
+  <ion-card class="card" color="secondary"><font style color='black'>
+    <p>A unit trust is a fund composed of investitors money , 
+      which is invested in a variety of financial assets</p>
+    <p class="p">When you invest in a unit trust, 
+      your money is pooled with that of other investors' 
+      to form a fund ,
+      and invested into various assets to meet 
+      the unit trusts objectives by a fund manager</p>
+    <p class="p">For example if you invest in China fund, 
+      the fund manager will invest your money into
+       selected opportunities within China.</p>
+  </font> </ion-card>
+  
+  
+
+  <ion-item lines="none">
+    <ion-title slot="start">Testimonals</ion-title>
+  </ion-item>
+
+
+  <ion-item *ngFor="let f of feedback">
+      <ion-thumbnail slot="start">
+        <img class="photo"
+          src="{{f.image}}">
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{f.username}}</h3>
+        <p>{{f.description}}</p>
+      </ion-label>
     </ion-item>
-    <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-      <ion-icon slot="start" color="medium" name="build"></ion-icon>
-      <ion-label>Scaffold Out Your App</ion-label>
-    </ion-item>
-    <ion-item href="https://ionicframework.com/docs/layout/structure">
-      <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-      <ion-label>Change Your App Layout</ion-label>
-    </ion-item>
-    <ion-item href="https://ionicframework.com/docs/theming/basics">
-      <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-      <ion-label>Theme Your App</ion-label>
-    </ion-item>
-  </ion-list>
 </ion-content>

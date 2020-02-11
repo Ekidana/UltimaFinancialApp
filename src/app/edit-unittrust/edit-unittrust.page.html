@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update Price</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="editUnitForm" (ngSubmit)="update()">
+
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="string" formControlName="name"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Fund Type</ion-label>
+  <ion-select formControlName="type">
+    <ion-select-option *ngFor="let option of types" [value]="option">
+      {{option}}
+    </ion-select-option>
+  </ion-select>
+</ion-item>
+<!-- <ion-item>
+  <ion-label>Date</ion-label>
+  <ion-datetime id="dynamicDisabled" formControlName="date" displayFormat="MM DD YY" disabled value="1994-12-15"></ion-datetime>
+</ion-item> -->
+
+    <ion-button expand="block" color="primary" TYPE="submit"> Update Unit trust</ion-button>
+
+    </form>
+</ion-content>

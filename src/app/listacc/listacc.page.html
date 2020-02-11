@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Withdrawal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3 padding>Add Bank Account</h3>
+  <!--
+  <ion-title>Personal Account</ion-title>
+  <ion-item *ngFor="let f of bank">
+    
+    <ion-label>
+      <h3>id: {{f.id}}</h3>
+      <p>Name: {{f.name}}</p>
+      <p>Currency: {{f.currency}}</p>
+      <ion-button (click)="validation()" slot="end">Withdraw From this Account</ion-button>
+    </ion-label>
+  </ion-item>
+  -->
+  <ion-card>
+  <ion-item *ngFor="let f of bank">
+
+    <ion-label> Name: <p> {{f.name}}</p></ion-label>
+  </ion-item>
+
+    <ion-select placeholder='Select your bank' single= 'true'>
+      <ion-select-option value="DBS">DBS Ltd</ion-select-option>
+      <ion-select-option value="posb">POSB Bank</ion-select-option>
+
+      <ion-select-option value="uob">United Overseas Bank Ltd</ion-select-option>
+      <ion-select-option value="ocbc">Oversea-Chinese Banking Corporation Ltd</ion-select-option>
+
+      <ion-select-option value="anz">Australia and New Zealand Banking Group</ion-select-option>
+
+      <ion-select-option value="boc">Bank of China Limited</ion-select-option>
+
+      <ion-select-option value="mufj">The Bank of Tokyo-Mitsubishi UFJ</ion-select-option>
+
+      <ion-select-option value="bnp">BNP Paribas</ion-select-option>
+
+      <ion-select-option value="citi">CIMB Singapore Limited</ion-select-option>
+
+      <ion-select-option value="db">Deutsche Bank AG</ion-select-option>
+
+      <ion-select-option value="hlb">HL Bank</ion-select-option>
+
+      <ion-select-option value="hsbc">HSBC Bank</ion-select-option>
+
+      <ion-select-option value="icici">ICICI Bank Limited</ion-select-option>
+
+      <ion-select-option value="icbc">Industrial And Commercial Bank of China</ion-select-option>
+
+      <ion-select-option value="msl">Maybank Singapore Limited</ion-select-option>
+      <ion-select-option value="mhcb">Mizuho Bank</ion-select-option>
+      <ion-select-option value="rhb">RHB Bank Berhad</ion-select-option>
+      <ion-select-option value="sc">Standard Chartered Bank</ion-select-option>
+      <ion-select-option value="smbc">Sumitomo Mitsui Banking Corporation</ion-select-option>
+
+
+    </ion-select>
+  
+    <ion-input padding placeholder="Account Number"> </ion-input>
+  </ion-card>
+  <ion-button style="position:'center' round outline" href="/processacc"> Save Bank Account</ion-button>
+
+
+</ion-content>

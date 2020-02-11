@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <div style="display: flex;">
+    <ion-back-button defaultHref="/withdraw"></ion-back-button>
+    <ion-title>Deposit</ion-title>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+<h4><b>How much do you want to allocate towards your portfolio?</b>
+  </h4><br/>
+  
+  <form [formGroup]="depositform" (ngSubmit) = "addDeposit()">
+ <!--  <h5 style="text-align: center;"> UOB United E-commerce Fund</h5>--> 
+    <ion-card>
+      <ion-item>
+        <ion-label>SGD</ion-label>
+        <ion-input placeholder="$" (ionChange)=dep(txt) [(ngModel)]="txt"  formControlName="deposit"> </ion-input>
+      </ion-item>
+    </ion-card>
+    <br/>
+    <H1><B> Total Deposit : $ {{deposit}}</B></H1>
+    <ion-button expand="block" color="tertiary" type="submit">CONTINUE</ion-button>
+  </form>
+</ion-content>

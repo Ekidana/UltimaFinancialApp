@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        Return to Profile Page
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Update Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="updateprofileForm" (ngSubmit) = "updateProfile()">
+    <ion-item>
+      <ion-label>Email: </ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>First Name: </ion-label>
+      <ion-input type="name" formControlName="fname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last Name: </ion-label>
+      <ion-input type="name" formControlName="lname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>NRIC: </ion-label>
+      <ion-input type="nric" formControlName="nric"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Gender: </ion-label>
+      <ion-select formControlName="gender">
+        <ion-select-option *ngFor="let option of genderidentifier" [value]="option">
+          {{option}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+    <ion-label>Date of Birth: </ion-label>
+      <ion-input type="date" formControlName="date"></ion-input>
+    </ion-item>
+    <ion-button expand="block" color="tertiary" type="submit">Update Profile</ion-button>
+  </form>
+  <br>
+  <ion-label *ngIf = "updateprofileForm.controls.email.errors && submitted" color="danger">
+    Email is required. Eg. someone.email.com
+  </ion-label>
+  <br>
+  <ion-label *ngIf = "updateprofileForm.controls.fname.errors && submitted" color="danger">
+    First Name is required.
+  </ion-label>
+  <br>
+  <ion-label *ngIf = "updateprofileForm.controls.lname.errors && submitted" color="danger">
+    Last Name is required.
+  </ion-label>
+  <br>
+  <ion-label *ngIf = "updateprofileForm.controls.nric.errors && submitted" color="danger">
+    NRIC is required.
+  </ion-label>
+  <br>
+  <ion-label *ngIf = "updateprofileForm.controls.date.errors && submitted" color="danger">
+    Date of Birth is required.
+  </ion-label>
+</ion-content>

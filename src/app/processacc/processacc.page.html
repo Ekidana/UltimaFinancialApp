@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-toolbar>
+    <div style="display: flex;">
+    <ion-back-button defaultHref="/withdrawal"></ion-back-button>
+    <ion-title>Withdrawal</ion-title>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<form [formGroup]="withdrawalform" (ngSubmit) = "withdraw()">
+  <h3 style="text-align: center;"><b>FROM</b></h3> 
+  
+<ion-card>
+  
+    <ion-item>
+      <div style="width: 100%;">
+        <p style="text-align: center;"><b>{{utName}}</b></p>
+        <div style="width: 100%; display: flex;text-align: center; ">
+          <p ><b>SGD ($) : </b></p>
+          <ion-input type="name" formControlName="withdrawrate"></ion-input>
+        </div>
+    </div>
+    </ion-item>
+
+    <ion-item>
+      <div style="width: 100%; display: flex;">
+        <p style="text-align: left;  "><b>Available withdrawal amount: $ </b></p>
+        <!-- <div style="width: 100%; display: flex;text-align: center; "> -->
+          <p ><b>{{utAmount}}</b></p>
+          
+        <!-- </div> -->
+    </div>
+    </ion-item>
+
+</ion-card>
+<hr/>
+
+<h3 style="text-align: center;"><b>TO</b></h3> 
+
+ <ion-card >
+  <ion-item>
+    <!-- <div style="width: 100%;text-align: center; ">
+    <p style="text-align: center;">You've no bank account.</p>
+    <p style="text-align: center;" ><b><u href="#">Create bank account</u></b></p> 
+    </div> -->
+    <ion-label>Select Bank Name:</ion-label>
+    <ion-select formControlName="selectedbank" >
+      <ion-select-option *ngFor="let account of accounts" [value]="account.bankID">{{account.bankname}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-card>
+<p style="text-align: center;" ><b><a href="/add-bank">Add a account for your withdrawal</a></b></p> 
+
+<ion-button expand="block" color="tertiary" type="submit">WITHDRAW</ion-button>
+</form>
+
+
+
+</ion-content>

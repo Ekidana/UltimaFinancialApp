@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-toolbar>
+    <div style="display: flex;">
+    <ion-back-button defaultHref="/setting"></ion-back-button>
+    <ion-title>Bank Accounts</ion-title>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h3 padding> Bank accounts</h3>
+  <h6> These are the accounts to which you can withdraw your funds.</h6>
+ <div class="hr">
+  <ion-card >
+    <ion-list *ngFor="let bank of banks;  index as i">
+      <ion-item>
+        <div>
+        <ion-label>Account No. {{i+1}}. : {{bank.accountnumber}}</ion-label>
+        <ion-label>Bank Name            : {{bank.bankname}}</ion-label>
+      </div>
+      <ion-icon name="remove-circle" (click)="delete(bank.bankID)" slot="end"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</div>
+<div center>
+<a href="/add-bank">New withdrawal bank account
+</a></div>
+</ion-content>

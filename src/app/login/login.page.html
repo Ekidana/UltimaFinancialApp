@@ -23,7 +23,17 @@
   <ion-label color='danger'>
     <p>{{loginError}}</p>
   </ion-label>
+  <ion-button expand="block" fill="clear" color="primary" type="submit" (click)="goToResetPassword()">
+    Forgot your Password?
+  </ion-button>
   <ion-button expand="block" fill="clear" color="primary" type="submit" (click)="goToSignup()">
-    Or Create an Account
- </ion-button>
+    Create an Account
+  </ion-button>
+  <ion-label *ngIf = "loginForm.controls.email.errors && submitted" color="danger">
+    Account Email is required. Eg. someone@email.com
+  </ion-label>
+  <br>
+  <ion-label *ngIf = "loginForm.controls.password.errors && submitted" color="danger">
+    Account Password is required.
+  </ion-label>
 </ion-content>

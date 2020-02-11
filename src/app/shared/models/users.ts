@@ -1,11 +1,11 @@
 export class User {
 
-    photoURL: string;
+  photoURL: string;
+
+  constructor(  
+    public name?: string,
+    public email?: string,
+    public password?: string
+  ) { }
   
-    constructor(  
-      public name?: string,
-      public email?: string,
-      public password?: string
-    ) { }
-    
-  }
+}

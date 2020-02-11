@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Edit Expense Here</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+
+<form [formGroup]= "ExpensetrackerEditForm" (ngSubmit)="update()"> 
+  <ion-button expand="block" color="tertiary" type="submit" >Update</ion-button>
+ 
+  <ion-item>
+  
+    <ion-label>Item Description:</ion-label>
+
+    <ion-input 
+    formControlName="Item" 
+    type="text"
+    placholder="What is the Item?"
+    >
+  </ion-input>
+
+  </ion-item>
+
+  <ion-item>
+  
+    <ion-label>Amount($): </ion-label>
+
+    <ion-input 
+
+    formControlName="Amount" 
+    type="number" 
+    placeholder="How much does your Item cost?"
+    
+  >    
+    </ion-input>
+
+  </ion-item> 
+
+  <ion-item>
+  
+    <ion-label>Date: </ion-label>
+
+    <ion-input 
+
+    formControlName="Date"
+     type="Date" 
+    placeholder="When did you purchase this?"
+
+    ></ion-input>
+
+  </ion-item>
+  <!-- <ion-item-sliding>
+    <ion-item-options side="end">
+      <ion-icon color="Primary" expandable>
+        
+      </ion-icon>
+    </ion-item-options>
+    </ion-item-sliding> -->
+    </form>
+
+
+</ion-content>
+

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <div style="display: flex;">
+      <ion-back-button defaultHref="/admin-investment"></ion-back-button>
+    <ion-title>Fund Manager Buy Requests</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list *ngFor = "let item of list" [routerLink]="['/fmbuypage', item.id]">
+  <ion-item>
+    <ion-label><h3>{{item.userid}}</h3></ion-label>
+    <ion-label><p>{{item.investname}}</p></ion-label>
+    <ion-label><p>{{item.datetime | date: 'dd/MM/yyyy'}}</p></ion-label>
+  </ion-item>
+</ion-list>
+</ion-content>

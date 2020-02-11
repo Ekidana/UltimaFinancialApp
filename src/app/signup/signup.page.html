@@ -5,7 +5,7 @@
         Close
       </ion-button>
     </ion-buttons>
-    <ion-title>Sign up</ion-title>
+    <ion-title>Sign Up</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -18,9 +18,23 @@
       <ion-label>Password</ion-label>
       <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
+    <ion-item>
+      <ion-label>Retype Password</ion-label>
+      <ion-input type="password" formControlName="rpassword"></ion-input>
+    </ion-item>
     <ion-button expand="block" color="tertiary" type="submit">Sign Up</ion-button>
   </form>
   <ion-label color='danger'>
     <p>{{signupError}}</p>
+  </ion-label>
+  <ion-label *ngIf = "signupForm.controls.email.errors && submitted" color="danger">
+    Email is required. Eg. someone.email.com
+  </ion-label>
+  <br>
+  <ion-label *ngIf = "signupForm.controls.password.errors && submitted" color="danger">
+    Password is required.
+  </ion-label>
+  <ion-label *ngIf = "signupForm.controls.rpassword.errors && submitted" color="danger">
+    Retype Password is required.
   </ion-label>
 </ion-content>

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <div style="display: flex;">
+      <ion-back-button defaultHref="/go-unittrust"></ion-back-button>
+    <ion-title>Add Investment Amount</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item><h3>Investment Name: {{name}}</h3></ion-item>
+  <ion-item><h4>Offer Price: {{offerprice}}</h4></ion-item>
+  <ion-item>Please enter your desired investment amount for this fund.</ion-item>
+  <form [formGroup]="amountForm" (ngSubmit)="updateQuantity()">
+    <ion-item>
+      <ion-label>Investment Amount</ion-label>
+      <ion-input type="number" formControlName="amount"></ion-input>
+    </ion-item>
+    <ion-button expand="block" color="tertiary" type="submit">Update Investment Amount</ion-button>
+  </form>
+  
+</ion-content>

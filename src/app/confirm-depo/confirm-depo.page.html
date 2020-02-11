@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <div style="display: flex;">
+    <ion-back-button defaultHref="/deposit"></ion-back-button>
+    <ion-title>Deposit</ion-title>
+  </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding"><h4 style="text-align: center;"><b>Confirm your deposit amount</b>
+</h4><br/>
+
+  
+<!-- 
+<ion-card>
+  <ion-card-content>
+    <ion-grid>
+    <ion-col>
+          <ion-row>
+     <h3> UOB United E-commerce Fund  </h3> 
+    </ion-row> 
+     <ion-row padding> 
+        $
+      </ion-row>
+   
+
+</ion-col>
+</ion-grid>
+  </ion-card-content>
+</ion-card>
+<hr>
+Your next deposit amount is: $
+<hr>
+
+<ion-button href="/messagedepo">
+  CONFIRM
+</ion-button> -->
+
+
+<form [formGroup]="depositform" (ngSubmit) = "addDeposit()">
+<!--  <h5 style="text-align: center;"> UOB United E-commerce Fund</h5>-->
+  <ion-card>
+    <ion-item>
+      <ion-input placeholder="$" formControlName="deposit" style="text-align: center;" readonly> </ion-input>
+    </ion-item>
+  </ion-card>
+  <br/>
+  <ion-button expand="block" color="tertiary" type="submit">CONFIRM</ion-button>
+</form>
+</ion-content>

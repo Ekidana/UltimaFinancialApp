@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Add Unit Trust
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addUnitForm" (ngSubmit)="add()">
+
+  <ion-item>
+    <ion-label> Name </ion-label>
+    <ion-input formControlName="name"></ion-input>
+    <ion-label *ngIf="addUnitForm.controls.name.errors && submitted" color="danger">
+      Name is required
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Bid Price</ion-label>
+    <ion-input type="number" formControlName="bidprice"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="addUnitForm.controls.bidprice.errors && submitted">
+    <ion-label color="danger">
+      Price must be positive
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Offer Price</ion-label>
+    <ion-input type="number" formControlName="offerprice"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="addUnitForm.controls.offerprice.errors && submitted">
+    <ion-label color="danger">
+      Price must be positive
+    </ion-label>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label> Fund Type </ion-label>
+    <ion-select formControlName="type">
+      <ion-select-option *ngFor="let option of types" [value]="option">
+        {{option}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label>Date:</ion-label>
+    <ion-datetime displayFormat="MM DD YY" formControlName="date"></ion-datetime>
+  </ion-item>
+  
+
+  <ion-button expand="block" color="primary" TYPE="submit"> Add</ion-button>
+
+  </form>
+  {{addUnitForm.value.name}}
+  {{addUnitForm.value.bidprice}}
+  {{addUnitForm.value.offerprice}}
+  {{addUnitForm.value.type}}
+  {{addUnitForm.value.date}}
+
+
+
+
+
+  
+</ion-content>

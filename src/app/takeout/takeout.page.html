@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Withdrawal</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item lines="none">
+    <h2>From which portofolios do you wish to withdraw ?</h2>
+  </ion-item>
+  <p>You can transfer your total portofolio balance less pending Withdrawals and dividends</p>
+  <ion-item lines="none">
+    <ion-label slot="start">Personal</ion-label>
+    <ion-label>Available (SDG)</ion-label><br>
+   
+  </ion-item>
+  <div>
+    <ion-item lines="none">
+      <ion-label slot="start">General Investing</ion-label>
+      <ion-label [(ngModel)]="toggleStatus">{{myValue}}</ion-label><br>
+    </ion-item>
+     <ion-button slot="end" (click)="validation()">Withdraw</ion-button> 
+    
+       
+  </div>
+</ion-content>

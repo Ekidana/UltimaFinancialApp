@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-toolbar>
+    <div style="display: flex;">
+    <ion-back-button defaultHref="/withdrawal"></ion-back-button>
+    <ion-title>Withdrawal</ion-title>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <img src="assets/img/personal.png" 
+  style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;"/>
+
+  <ion-item>
+    <ion-title style="text-align: center;"><b>Life Happens. We get it.</b></ion-title>
+  </ion-item>
+  <hr/>
+  <h5 style="text-align: center;">We'll be here when you are ready to invest again!</h5>
+  <hr/>
+
+  <ion-card style="width: 100%;margin: 0px;">
+    <ion-item>
+      <ion-icon name="arrow-forward" slot="end" (click)="withdraw()"></ion-icon>
+    </ion-item>
+  </ion-card>
+  
+  <hr/>
+  <h5 style="text-align: center;">We'll sell your investment , and then send your funds straight to your bank account .</h5>
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>Unit Trust</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card" color ="primary">
+    <img src="/assets/image/moneygrow.PNG" alt="" />
+    <ion-card-header>
+      <ion-card-subtitle>Choose the type you like and we will help you to invest</ion-card-subtitle>
+      <ion-card-title>Make your money grow </ion-card-title>
+    </ion-card-header>
+
+  </ion-card>
+
+  <h2> Unit Trust</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of unittrusts">
+        <div class="unittrust-card">
+          <div>Name: {{item.name}}</div>
+          <div [routerLink]="['/unittrustpricehistory', item.name]">Offer Price: {{item.offerprice | currency}}</div>
+          <!-- <ion-button size="small" (click)=showHistory()>
+            <ion-icon slot="icon-only" name="cash"></ion-icon>   
+            </ion-button>        -->
+            <div>Type: {{item.type}}</div>
+          <!-- <ion-button size="small" (click)=addToCart(item)>
+            <ion-icon slot="icon-only" name="cart"></ion-icon> -->
+
+            <ion-button size="small" (click)=addToCart(item)> Select
+            </ion-button>
+            <!-- <ion-button [routerLink]="['/go-unittrust', item.id]">Invest</ion-button> -->
+        </div>
+</ion-col>
+</ion-row>
+</ion-grid>
+
+
+</ion-content>

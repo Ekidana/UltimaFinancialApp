@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/adminunittrust"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update Offer Price For Unit Trust</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="editOfferPriceForm" (ngSubmit)="update()">
+
+    <ion-item>
+      <ion-label>Offer Price:</ion-label>
+      <ion-input formControlName="offerprice"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" color="tertiary"  type="submit">Update</ion-button>
+
+    </form>
+
+</ion-content>

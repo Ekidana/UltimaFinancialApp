@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-button slot="end">
+      <ion-button [routerLink]="['/add-unittrust']">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-button>
+    <ion-title>Unit Trust</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of unittrusts" >
+      <ion-item>
+      <ion-label [routerLink]="['/edit-unittrust', item.id]" >
+        <p>Name: {{item.name}} </p>
+        <p>Bid Price: {{item.bidprice |currency}}</p>
+        <p>Offer Price: {{item.offerprice |currency}}</p>
+
+        <!-- <p>Date: {{item.date.toDate() | date: 'dd/MM/yyyy'}}</p> -->
+
+        <p>Fund Type: {{item.type}}</p>
+        </ion-label>
+      </ion-item>
+      
+      <ion-button slot="end" [routerLink]="['/update-bidprice',item.id]" > Bid Price</ion-button>
+      <ion-button slot="end" [routerLink]="['/update-offerprice',item.id]" > Offer Price</ion-button>
+
+      <ion-item-options>
+        <ion-button full expandable (click)="delete(item)">
+          Delete
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item-options>
+        </ion-item-sliding>
+        </ion-list>
+      
+</ion-content>

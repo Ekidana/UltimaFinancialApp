@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-toolbar>
+    <div style="display: flex;">
+    <ion-back-button defaultHref="/app-feedback"></ion-back-button>
+    <ion-title>Feedback</ion-title>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+ 
+      <img src="assets/img/bad.jpg" 
+      style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;"/>
+
+    
+<h2 style="text-align: center;"> Oh No! What went wrong?</h2> 
+
+<form [formGroup]="addfeedback" (ngSubmit) = "addFeedback()">
+  <ion-item>
+
+    <ion-textarea placeholder="Your Comment" formControlName="feedback"> </ion-textarea>
+  </ion-item>
+  <ion-button expand="block" color="tertiary" type="submit">SUBMIT</ion-button>
+</form>
+
+</ion-content>

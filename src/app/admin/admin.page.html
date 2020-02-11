@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+      <ion-title>Ultima Financial Admin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <img src="/assets/image/utimafinancial.PNG"/>
+
+  <ion-card-header>
+  <ion-card-subtitle>Get Started with Adminstrator</ion-card-subtitle>
+  <ion-card-title>Welcome to Ultima Financial</ion-card-title>
+</ion-card-header>
+  <ion-card-content>
+  <p>With adminstrator privilege, you can verify,retrieve and update client profile.</p>
+</ion-card-content>
+</ion-card>
+<ion-list lines="none" padding>
+  <ion-list-header>
+    <ion-label>Actions</ion-label>
+  </ion-list-header>
+
+  <div (click)="go_cusverify()"><ion-item>
+    <ion-icon slot="start" color="primary" name="checkmark"></ion-icon>
+    <ion-label>Verify Account</ion-label>
+  </ion-item></div>
+
+  <div (click)="go_cusupdate()"><ion-item>
+    <ion-icon slot="start" color="primary" name="cloud-upload"></ion-icon>
+    <ion-label>Update Account</ion-label>
+  </ion-item></div>
+
+  <div (click)="go_cusdelete()"><ion-item>
+    <ion-icon slot="start" color="primary" name="trash"></ion-icon>
+    <ion-label>Delete Account</ion-label>
+  </ion-item></div>
+</ion-list>
+</ion-content>
+
+

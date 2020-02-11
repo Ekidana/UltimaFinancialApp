@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>FM Sell Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-item>Investment Name: {{investname}}</ion-item>
+<ion-item>Quantity: {{investquantity}}</ion-item>
+<ion-item>Submitted Bid Price: {{offer_bid_pricesubmitted}}</ion-item>
+<form [formGroup]="sellForm" (ngSubmit)="confirm()">
+  <ion-item>
+    <ion-label>Current Bid Price: </ion-label>
+    <ion-input type="number" formControlName="price"></ion-input>
+  </ion-item>
+  <ion-button expand="block" color="tertiary" type="submit">Check if can sell</ion-button>
+</form>
+<ion-label *ngIf = "sellForm.controls.price.errors && submitted" color="danger">
+  Bid Price is required
+</ion-label>
+</ion-content>

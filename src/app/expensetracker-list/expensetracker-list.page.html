@@ -1,0 +1,72 @@
+<!--VIEW PAGE-->
+<ion-header>
+  <ion-toolbar>
+      <!-- <ion-menu-button></ion-menu-button> -->
+      <!--add back button to the left of the header-->
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>
+      Your Expenses
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    <!--add page navigation for all item [routerlink]-->
+    <ion-searchbar (ionChange)=search($event) color='medium' placeholder="Search expense by description "></ion-searchbar>
+
+    <ion-refresher slot ="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-item>
+      <ion-label>view previous purchases: </ion-label>
+      <ion-select placeholder="Select">
+        <ion-select-option value="7Days">Last 7 days</ion-select-option>
+        <ion-select-option value="30Days">Last 30 days</ion-select-option>
+        <ion-select-option value="90Days">Last 90 days</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+
+
+    <ion-item *ngFor="let item of expense"> 
+      
+      
+      <ion-label> 
+  
+        <h2>Description:{{item.Item}} </h2>
+        <h2>Amount: {{item.Amount | currency}} </h2>
+        <h2>Date: {{item.Date}} </h2> 
+
+        
+       <ion-button (click)='expensetrackeredit(item)' style="float: right;" >
+        Edit Expense
+        <ion-icon name="create" ></ion-icon>
+       </ion-button>
+      
+
+
+     </ion-label> 
+   
+    </ion-item>  
+  
+<!-- THIS IS DELETE CODE OF HTML 
+    <ion-item-options>
+      <ion-button full expandable (click)="delete(item)">
+          Delete
+          <ion-icon name="trash"></ion-icon>
+      </ion-button>           
+    </ion-item-options> 
+    -->  
+   
+ 
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+</ion-content>

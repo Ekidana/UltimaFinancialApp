@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <div style="display: flex;">
+      <ion-back-button defaultHref="/unittrust"></ion-back-button>
+    <ion-title>Unit Trust Price History</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <div class="bold">Date</div>
+</ion-col>
+  <ion-col>
+      <div class="bold">OfferPrice</div>
+</ion-col>
+</ion-row>
+
+<ion-row *ngFor="let item of pricedatearray">
+  <ion-col>
+      <div>{{item.date}}</div>
+    </ion-col>
+      <ion-col >
+        <div>{{item.offerprice | currency}}</div>
+      </ion-col>
+      </ion-row>
+      </ion-grid>
+
+      <!-- <ion-button> -->
+      <!-- <ion-button [routerLink]="['/unitchart', id]"> Unit Chart</ion-button> -->
+<!-- </ion-button> -->
+
+
+
+
+
+
+</ion-content>

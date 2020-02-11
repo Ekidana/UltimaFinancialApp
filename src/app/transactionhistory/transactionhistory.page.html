@@ -1,0 +1,110 @@
+<ion-header>
+
+  <ion-toolbar>
+    <div style="display: flex;">
+    <ion-back-button defaultHref="/withdraw"></ion-back-button>
+    <ion-title>Transactions</ion-title>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-button expand="block" color="tertiary" (click)="showDeposit()">Deposit History</ion-button>
+  <ion-button expand="block" color="tertiary" (click)="showWithdrawal()">Withdrawal History</ion-button>
+
+
+  <div id="depositDiv" style="background-color: #eeecf7;border-radius: 15px; margin-top: 20px; display: none;">
+    
+    <div style="width: 100%;text-align: center; ">
+      <p ><b> Deposit Transaction</b></p>
+    </div>
+    
+    <ion-grid style="font-weight: 600;border-radius: 20px;background-color: #d9cdff;border-style: groove;">
+
+      
+      <ion-row>
+        <ion-col offset="1">
+          No.
+        </ion-col>
+        <ion-col>
+          Date
+        </ion-col>
+        <ion-col offset="1">
+          Deposit Amount
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngFor="let d of listingDeposit; let i = index" style="border-bottom-style: ridge;">
+ 
+      <ion-row>
+        <ion-col offset="1">
+          {{i+1}}
+        </ion-col>
+        <ion-col>
+          {{listingDepositDate[i]}}
+        </ion-col>
+        <ion-col offset="1">
+          {{d.depositAmount}}
+        </ion-col>
+      </ion-row>
+      
+     
+      
+    </ion-grid>
+
+    <div style="width: 100%;text-align: center; ">
+      <p ><b> Total deposits (SGD) :<font style color='primary'> $ {{totalDeposit}}</font></b></p>
+    </div>
+
+  </div>
+
+  <div id="withdrawalDiv" style="background-color: #eeecf7;border-radius: 15px; margin-top: 20px; display: none;">
+    
+    <div style="width: 100%;text-align: center; ">
+      <p ><b> Withdrawal Transaction</b></p>
+    </div>
+    
+    <ion-grid style="font-weight: 600;border-radius: 20px;background-color: #d9cdff;border-style: groove;">
+
+      
+      <ion-row>
+        <ion-col offset="1">
+          No.
+        </ion-col>
+        <ion-col>
+          Date
+        </ion-col>
+        <ion-col offset="1">
+          Withdrawal Amount
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngFor="let w of listingWithdrawal; let j = index" style="border-bottom-style: ridge;">
+ 
+      <ion-row>
+        <ion-col offset="1">
+          {{j+1}}
+        </ion-col>
+        <ion-col>
+          {{listingWithdrawalDate[j]}}
+        </ion-col>
+        <ion-col offset="1">
+          {{w.withdrawalAmount}}
+        </ion-col>
+      </ion-row>
+      
+     
+      
+    </ion-grid>
+
+    <div style="width: 100%;text-align: center; ">
+      <p ><b> Total withdrawal (SGD) :<font style color='primary'> $ {{totalWithdrawal}}</font></b></p>
+    </div>
+
+  </div>
+
+  
+</ion-content>

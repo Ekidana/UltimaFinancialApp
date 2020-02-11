@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Setting
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item (click)="gotoProfile()">
+      <ion-icon name="happy" slot="start"></ion-icon>
+
+      Profile
+ 
+  </ion-item>
+  <ion-item href="/bankacc">
+
+  
+      <ion-icon name="cash" slot="start"></ion-icon>
+      Bank Account
+ 
+  </ion-item>
+  <ion-item href="/app-feedback">
+
+      <ion-icon name="paper" slot="start"></ion-icon>
+      Give Feedback
+   
+  </ion-item>
+  
+</ion-content>

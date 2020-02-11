@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>FM Buy Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>Name of Investment: {{investname}}</ion-item>
+  <ion-item>Investment Amount: {{investamount}}</ion-item>
+  <ion-item>Investment Quantity: {{investquantity}}</ion-item>
+  <ion-item>Offer Price: {{offerprice}}</ion-item>
+  <form [formGroup]="buyForm" (ngSubmit)="check()">
+    <ion-item>
+      <ion-label>Current Offer Price: </ion-label>
+      <ion-input type="number" formControlName="price"></ion-input>
+    </ion-item>
+    <ion-button expand="block" color="tertiary" type="submit">Check if can buy</ion-button>
+  </form>
+  <ion-label *ngIf = "buyForm.controls.price.errors && submitted" color="danger">
+    Offer Price is required
+  </ion-label>
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Make an Expense here!</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+
+<ion-content padding>
+  <form [formGroup]="ExpensetrackerCreateForm" (submit)="add()">
+    <ion-item>
+      <ion-label stacked>Item Description: </ion-label>
+      <ion-textarea
+        formControlName="Item"
+        type="text"
+        placeholder="What's this item about?"
+      >    
+      </ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Item Amount($): </ion-label>
+      <ion-input
+        formControlName="Amount"
+        type="number"
+        placeholder="How much does your Item cost?"
+        min="0"
+      >
+      </ion-input>
+    </ion-item>
+    
+
+    <ion-item>
+      <ion-label stacked>Date Purchased: </ion-label>
+      <ion-input
+        formControlName="Date"
+        type="date"
+        placeholder="When did you purchase this?"
+      >
+      </ion-input>
+    </ion-item> 
+
+    <ion-button expand="block" type="submit">
+      Add Expense
+    </ion-button>
+    
+  </form>
+
+  {{ExpensetrackerCreateForm.value.Item}}
+  {{ExpensetrackerCreateForm.value.Amount}}
+  {{ExpensetrackerCreateForm.value.Date}}
+
+</ion-content>

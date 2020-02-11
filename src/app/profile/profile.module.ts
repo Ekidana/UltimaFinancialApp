@@ -7,13 +7,18 @@ import { IonicModule } from '@ionic/angular';
 import { ProfilePageRoutingModule } from './profile-routing.module';
 
 import { ProfilePage } from './profile.page';
+import { UpdateprofilePageModule } from '../updateprofile/updateprofile.module';
+import { ChangepasswordPageModule } from '../changepassword/changepassword.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProfilePageRoutingModule
+    ProfilePageRoutingModule,
+    UpdateprofilePageModule,
+    ChangepasswordPageModule
+    
   ],
   declarations: [ProfilePage]
 })

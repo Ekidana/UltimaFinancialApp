@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Verify details of User {{userid}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>First Name: {{fname}}</ion-item>
+  <ion-item>Last Name: {{lname}}</ion-item>
+  <ion-item>NRIC: {{nric}}</ion-item>
+  <ion-item>Date of Birth: {{dob}}</ion-item>
+  <ion-item>Gender: {{gender}}</ion-item>
+  <ion-item>NRIC Image</ion-item>
+  <img src = "{{nricimage}}">
+  <ion-item>Selfie Image</ion-item>
+  <img src = "{{selfieimage}}">
+  <!--To display image of user IC and Selfie-->
+  <!--Verify button to change value of verified in user profile-->
+  <ion-button (click) = "verifyidentity()">Verify User Identity</ion-button>
+  <ion-button (click) = "retryverification()">Reject User Identity</ion-button>
+</ion-content>

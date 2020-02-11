@@ -1,0 +1,44 @@
+
+<ion-header>
+
+  <ion-toolbar>
+    <div style="display: flex;">
+    <ion-back-button defaultHref="/withdrawal"></ion-back-button>
+    <ion-title>Withdrawal</ion-title>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <img src="assets/img/others.jpg" 
+  style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;"/>
+
+    <ion-item>
+      <ion-title style="text-align: center;"><b>Is there anything you want to <br>share with us?</b>
+  </ion-title>
+</ion-item>
+<h5 style="text-align: center;">We'd love to know what you think about how we could improve our product and services. We take your feedback seriously.</h5>
+
+
+<form [formGroup]="feedbackform" (ngSubmit) = "addFeedback()">
+<ion-item>
+  <ion-label color="primary" fixed></ion-label>
+  <ion-textarea width= "8800px" length='500px'placeholder="Feedback (Optional)" formControlName="feedback"></ion-textarea>
+</ion-item>
+<ion-button expand="block" color="tertiary" type="submit">Continue</ion-button>
+</form>
+
+<!--
+  <p> What would you like to do with your funds?</p>
+
+  <ion-item (click)="validation()" lines="none">
+    <ion-label>Withdraw to my bank account</ion-label>
+    <ion-icon slot="end" name="arrow-dropright"></ion-icon>
+  </ion-item>
+
+    <p>We'll sell your investment , and then send your funds straight to your bank account .</p>
+  -->  
+
+  </ion-content>
+  

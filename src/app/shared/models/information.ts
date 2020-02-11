@@ -3,9 +3,14 @@ export class Information {
     photoURL: string;
   
     constructor(  
-      public name?: string,
+      public userid?: string,
+      public fname?: string,
+      public lname?: string,
       public email?: string,
-      public id_num?: string,
+      public nric?: string,
+      public role?: string,
+      public gender?: string,
+      public id? : string
     ) { }
     
   }
